@@ -8,3 +8,5 @@
 .externalNativeBuild
 !/.idea/navEditor.xml
 
+.idea/gradle.xml
+.idea/misc.xml
