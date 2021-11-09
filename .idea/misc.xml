@@ -4,6 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidStudioProjects/Udacity/ShoeStoreInventory/app/src/main/res/layout/activity_main.xml" value="0.1933534743202417" />
+        <entry key="..\:/AndroidStudioProjects/Udacity/ShoeStoreInventory/app/src/main/res/layout/instructions_fragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidStudioProjects/Udacity/ShoeStoreInventory/app/src/main/res/layout/login_fragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidStudioProjects/Udacity/ShoeStoreInventory/app/src/main/res/layout/shoe_details_fragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidStudioProjects/Udacity/ShoeStoreInventory/app/src/main/res/layout/shoe_list_fragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidStudioProjects/Udacity/ShoeStoreInventory/app/src/main/res/layout/welcome_fragment.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
@@ -12,5 +17,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.36666666666666664" />
+      </ProjectState>
+    </option>
   </component>
 </project>
