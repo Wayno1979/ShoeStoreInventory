@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import androidx.appcompat.widget.Toolbar
 import timber.log.Timber
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
@@ -14,6 +15,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.onNavDestinationSelected
+import androidx.navigation.ui.setupWithNavController
 import com.udacity.shoestore.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -33,6 +35,11 @@ class MainActivity : AppCompatActivity() {
 
         navController = navHostFragment.navController
         NavigationUI.setupActionBarWithNavController(this, navController)
+
+        //todo: implement appBarConfiguration, remove navigate up
+        //val appBarConfiguration = AppBarConfiguration(navController.graph)
+        //findViewById<Toolbar>(R.id.toolbar)
+            //.setupWithNavController(navController, appBarConfiguration)
     }
 
     override fun onSupportNavigateUp(): Boolean {
