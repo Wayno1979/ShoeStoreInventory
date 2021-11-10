@@ -20,7 +20,6 @@ class ShoeListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.shoe_list_fragment, container, false)
-
         return binding.root
     }
 }
