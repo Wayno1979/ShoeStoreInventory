@@ -11,4 +11,5 @@
     <string name="proceed">Proceed</string>
     <string name="instructions">Instructions</string>
     <string name="instructions_long">Here are some very long instructions to follow</string>
+    <string name="logout">Logout</string>
 </resources>

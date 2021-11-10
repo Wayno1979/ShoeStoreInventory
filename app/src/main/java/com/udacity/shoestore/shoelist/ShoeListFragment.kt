@@ -7,12 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.udacity.shoestore.R
+import com.udacity.shoestore.SharedViewModel
 import com.udacity.shoestore.databinding.ShoeListFragmentBinding
 
 class ShoeListFragment : Fragment() {
 
     private lateinit var binding: ShoeListFragmentBinding
-    private lateinit var viewModel: ShoeListViewModel
+    private lateinit var viewModel: SharedViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
