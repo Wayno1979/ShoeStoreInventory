@@ -7,8 +7,11 @@ import com.udacity.shoestore.models.Shoe
 
 class SharedViewModel : ViewModel() {
 
+    private var _isLoggedIn = MutableLiveData<Boolean>()
+    val isLoggedIn: LiveData<Boolean>
+        get() = _isLoggedIn
+
     private var _shoeList = MutableLiveData<MutableList<Shoe>>(mutableListOf())
     val shoeList: LiveData<MutableList<Shoe>>
         get() = _shoeList
-
 }
