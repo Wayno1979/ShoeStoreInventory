@@ -34,5 +34,7 @@ class SharedViewModel : ViewModel() {
         _currentShoe.value = Shoe("",0.0,"","", mutableListOf())
     }
 
-
+    fun login() {
+        _isLoggedIn.value = true
+    }
 }

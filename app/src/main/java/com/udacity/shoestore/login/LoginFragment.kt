@@ -39,6 +39,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun goToWelcome(){
+        sharedViewModel.login()
         findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
     }
 }

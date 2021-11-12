@@ -35,8 +35,16 @@ class ShoeListFragment : Fragment() {
             }
         }
 
-        //todo: if shoe list empty add text view, else loop through list and add to list
+        addShoes()
 
         return binding.root
+    }
+
+    private fun addShoes() {
+        sharedViewModel.shoeList.value?.forEach {
+            //todo: if shoe list empty add text view, else loop through list and add to list
+
+
+        }
     }
 }
