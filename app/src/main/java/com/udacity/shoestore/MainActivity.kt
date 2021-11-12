@@ -45,7 +45,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        //todo: set viewmodel logged in to false
         return item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
     }
 }
