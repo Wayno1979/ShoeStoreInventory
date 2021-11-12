@@ -7,7 +7,9 @@
     <string name="sign_in">SIGN IN</string>
     <string name="register">REGISTER</string>
     <string name="welcome">Welcome</string>
-    <string name="welcome_long">Thank you for choosing The Shoe Store</string>
+    <string name="welcome_long">Thank you for choosing The Shoe Store.
+    \n\nThis app allows you to view and update your shoe inventory.
+    \n\nPlease proceed to the next screen to view instructions.</string>
     <string name="proceed">Proceed</string>
     <string name="instructions">Instructions</string>
     <string name="instructions_long">Here are some very long instructions to follow</string>
