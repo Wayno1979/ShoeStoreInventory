@@ -21,12 +21,12 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.login_fragment, container, false)
-        binding.loginButton.setOnClickListener { view ->
+        binding.loginButton.setOnClickListener {
             //todo: extract to viewmodel and xaml
             goToWelcome()
         }
 
-        binding.registerButton.setOnClickListener { view ->
+        binding.registerButton.setOnClickListener {
             //todo: extract to viewmodel and xaml
             goToWelcome()
         }
