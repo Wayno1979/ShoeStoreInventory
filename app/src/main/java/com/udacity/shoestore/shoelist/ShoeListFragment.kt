@@ -5,7 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
+import android.widget.LinearLayout
+import androidx.databinding.DataBindingUtil.inflate
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
@@ -24,7 +25,7 @@ class ShoeListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.shoe_list_fragment, container, false)
+        binding = inflate(inflater, R.layout.shoe_list_fragment, container, false)
         navController = findNavController()
 
         binding.apply {
@@ -37,14 +38,26 @@ class ShoeListFragment : Fragment() {
 
         addShoes()
 
+        //todo: add observer for shoes list
+
         return binding.root
     }
 
     private fun addShoes() {
+        //clear the list
+        binding.shoeListLinearLayout.removeAllViews()
+
+        // add a new view for each shoe
         sharedViewModel.shoeList.value?.forEach {
-            //todo: if shoe list empty add text view, else loop through list and add to list
+            //todo: create a custom view class that returns shoe layout
+//            val shoeBinding = inflate(
+//                LayoutInflater.from(context),
+//                R.layout.shoe_list_item,
+//                binding.shoeListLinearLayout,
+//                false
+//            )
 
-
+            //shoeBinding.shoe = it
         }
     }
 }
