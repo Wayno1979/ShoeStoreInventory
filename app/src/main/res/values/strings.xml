@@ -31,4 +31,7 @@
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
     <string name="welcome_shoes_description">Shoes</string>
+
+    <string name="email_error">Please enter your email address.</string>
+    <string name="password_error">Please enter your password.</string>
 </resources>

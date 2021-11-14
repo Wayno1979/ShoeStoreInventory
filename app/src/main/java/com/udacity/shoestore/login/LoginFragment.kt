@@ -1,10 +1,12 @@
 package com.udacity.shoestore.login
 
 import android.os.Bundle
+import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
@@ -28,14 +30,32 @@ class LoginFragment : Fragment() {
             viewModel = sharedViewModel
 
             loginButton.setOnClickListener {
-                goToWelcome()
+                tryLogin()
             }
             registerButton.setOnClickListener {
-                goToWelcome()
+                tryLogin()
             }
         }
 
         return binding.root
+    }
+
+    private fun tryLogin() {
+        var canLogin = true
+
+        if (binding.emailEditText.text.toString().isEmpty()) {
+            binding.emailEditText.error = resources.getString(R.string.email_error)
+            canLogin = false
+        }
+
+        if (binding.passwordEditText.text.toString().isEmpty()) {
+            binding.passwordEditText.error = resources.getString(R.string.password_error)
+            canLogin = false
+        }
+
+        if (canLogin){
+            goToWelcome()
+        }
     }
 
     private fun goToWelcome(){
