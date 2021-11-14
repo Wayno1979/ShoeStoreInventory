@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -31,9 +32,11 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:src="@drawable/ic_add"
+            android:layout_margin="@dimen/padding"
+            android:backgroundTint="@color/colorAccent"
             android:contentDescription="@string/add"
-            android:layout_margin="16dp" />
+            android:src="@drawable/ic_add"
+            app:tint="@android:color/white" />
 
     </RelativeLayout>
 </layout>

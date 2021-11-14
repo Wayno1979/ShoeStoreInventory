@@ -12,7 +12,14 @@
     \n\nPlease proceed to the next screen to view instructions.</string>
     <string name="proceed">Proceed</string>
     <string name="instructions">Instructions</string>
-    <string name="instructions_long">Here are some very long instructions to follow</string>
+    <string name="instructions_long">
+        1. Click \'Proceed\' to go to the Shoe List
+        \n\n2. Click the \'+\' button to add a new shoe
+        \n\n3. Enter the details for the shoe you wish to add
+        \n\n4. Click \'Cancel\' if you want to return to the Shoe List without adding the shoe
+        \n\n5. Click \'Save\' to save the shoe and return to the Shoe List
+        \n\n6. You can return to the \'Login\' Screen by clicking \'Logout\' from the menu
+    </string>
     <string name="logout">Logout</string>
     <string name="login">Login</string>
     <string name="shoe_list">Shoe List</string>
@@ -20,7 +27,7 @@
     <string name="shoe_name">Shoe Name</string>
     <string name="company">Company</string>
     <string name="shoe_size">Shoe Size</string>
-    <string name="description">Description (max. 100)</string>
+    <string name="description">Description</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
 </resources>

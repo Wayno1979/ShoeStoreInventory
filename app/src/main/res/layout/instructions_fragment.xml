@@ -16,10 +16,11 @@
 
         <TextView
             android:id="@+id/instructions_text"
+            style="@style/labels"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/instructions"
-            android:textSize="24sp"
+            android:textSize="@dimen/text_size_large"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -28,12 +29,12 @@
 
         <TextView
             android:id="@+id/instructions_long_text"
+            style="@style/labels"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/padding"
+            android:padding="@dimen/padding"
             android:text="@string/instructions_long"
-            android:textSize="20sp"
-            android:padding="16dp"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +45,8 @@
         <Button
             android:id="@+id/instructions_proceed_button"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/height"
+            android:layout_margin="@dimen/padding"
             android:text="@string/proceed"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
