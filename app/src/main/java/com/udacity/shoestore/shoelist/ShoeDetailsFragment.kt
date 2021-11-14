@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
@@ -29,21 +30,21 @@ class ShoeDetailsFragment : Fragment() {
 
         binding.apply {
             viewModel = sharedViewModel
+            shoe = sharedViewModel.currentShoe.value
 
             cancelButton.setOnClickListener {
                 navigateBack()
             }
-            saveButton.setOnClickListener {
-                addShoeToList()
-                navigateBack()
-            }
+
+            sharedViewModel.eventShoeAdded.observe(viewLifecycleOwner, Observer{ shoeAdded ->
+                if (shoeAdded) {
+                    sharedViewModel.addShoeCompleted()
+                    navigateBack()
+                }
+            })
         }
 
         return binding.root
-    }
-
-    private fun addShoeToList() {
-
     }
 
     private fun navigateBack()

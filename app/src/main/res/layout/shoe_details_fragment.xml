@@ -7,6 +7,10 @@
         <variable
             name="viewModel"
             type="com.udacity.shoestore.SharedViewModel" />
+
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
     </data>
 
    <androidx.constraintlayout.widget.ConstraintLayout
@@ -36,6 +40,7 @@
            android:ems="10"
            android:inputType="textPersonName"
            android:minHeight="48dp"
+           android:text="@{shoe.name}"
            app:layout_constraintEnd_toEndOf="parent"
            app:layout_constraintHorizontal_bias="0.0"
            app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +59,7 @@
            app:layout_constraintTop_toBottomOf="@+id/shoe_name_editText" />
 
        <EditText
-           android:id="@+id/editTextTextPersonName3"
+           android:id="@+id/company_editText"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:layout_marginStart="16dp"
@@ -63,6 +68,7 @@
            android:ems="10"
            android:inputType="textPersonName"
            android:minHeight="48dp"
+           android:text="@{shoe.company}"
            app:layout_constraintEnd_toEndOf="parent"
            app:layout_constraintHorizontal_bias="0.0"
            app:layout_constraintStart_toStartOf="parent"
@@ -78,18 +84,19 @@
            app:layout_constraintEnd_toEndOf="parent"
            app:layout_constraintHorizontal_bias="0.0"
            app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+           app:layout_constraintTop_toBottomOf="@+id/company_editText" />
 
        <EditText
-           android:id="@+id/editTextTextPersonName4"
+           android:id="@+id/size_editText"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:layout_marginStart="16dp"
            android:layout_marginTop="8dp"
            android:layout_marginEnd="16dp"
            android:ems="10"
-           android:inputType="textPersonName"
+           android:inputType="number"
            android:minHeight="48dp"
+           android:text="@{Double.toString(shoe.size)}"
            app:layout_constraintEnd_toEndOf="parent"
            app:layout_constraintStart_toStartOf="parent"
            app:layout_constraintTop_toBottomOf="@+id/size_text" />
@@ -104,10 +111,10 @@
            app:layout_constraintEnd_toEndOf="parent"
            app:layout_constraintHorizontal_bias="0.0"
            app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+           app:layout_constraintTop_toBottomOf="@+id/size_editText" />
 
        <EditText
-           android:id="@+id/editTextTextMultiLine"
+           android:id="@+id/description_editText"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:layout_marginStart="16dp"
@@ -119,6 +126,7 @@
            android:maxLength="100"
            android:minHeight="48dp"
            android:minLines="5"
+           android:text="@{shoe.description}"
            app:layout_constraintEnd_toEndOf="parent"
            app:layout_constraintHorizontal_bias="0.0"
            app:layout_constraintStart_toStartOf="parent"
@@ -138,6 +146,7 @@
            android:layout_width="150dp"
            android:layout_height="wrap_content"
            android:layout_margin="16dp"
+           android:onClick="@{() -> viewModel.addShoe()}"
            android:text="@string/save"
            app:layout_constraintBottom_toBottomOf="parent"
            app:layout_constraintEnd_toEndOf="parent" />

@@ -37,7 +37,7 @@ class ShoeListFragment : Fragment() {
             }
         }
 
-        sharedViewModel.shoeList.observe(this, Observer { shoeList ->
+        sharedViewModel.shoeList.observe(viewLifecycleOwner, Observer {
             addShoes()
         })
 
@@ -71,7 +71,7 @@ class ShoeListFragment : Fragment() {
             }
 
             // add to the layout
-            binding.shoeListLinearLayout.addView(shoeItemLayout)
+            //binding.shoeListLinearLayout.addView(shoeItemLayout)
         }
     }
 }

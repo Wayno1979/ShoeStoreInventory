@@ -7,13 +7,13 @@ import com.udacity.shoestore.models.Shoe
 
 class SharedViewModel : ViewModel() {
 
-    private val _isLoggedIn = MutableLiveData<Boolean>()
+    private val _eventLoggedIn = MutableLiveData<Boolean>()
     val isLoggedIn: LiveData<Boolean>
-        get() = _isLoggedIn
+        get() = _eventLoggedIn
 
-    private val _newShoeAdded = MutableLiveData<Boolean>()
-    val newShoeAdded: LiveData<Boolean>
-        get() = _newShoeAdded
+    private val _eventShoeAdded = MutableLiveData<Boolean>()
+    val eventShoeAdded: LiveData<Boolean>
+        get() = _eventShoeAdded
 
     private val _shoeList = MutableLiveData<MutableList<Shoe>>()
     val shoeList: LiveData<MutableList<Shoe>>
@@ -24,8 +24,7 @@ class SharedViewModel : ViewModel() {
         get() = _currentShoe
 
     init {
-        _isLoggedIn.value = false
-        _newShoeAdded.value = false
+        _eventLoggedIn.value = false
         _shoeList.value = mutableListOf()
         resetCurrentShoe()
     }
@@ -35,6 +34,16 @@ class SharedViewModel : ViewModel() {
     }
 
     fun login() {
-        _isLoggedIn.value = true
+        _eventLoggedIn.value = true
+    }
+
+    fun addShoe() {
+        _shoeList.value?.add(_currentShoe.value!!)
+        resetCurrentShoe()
+        _eventShoeAdded.value = true
+    }
+
+    fun addShoeCompleted() {
+        _eventShoeAdded.value = false
     }
 }
