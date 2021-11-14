@@ -5,9 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.databinding.DataBindingUtil.inflate
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
@@ -36,28 +37,41 @@ class ShoeListFragment : Fragment() {
             }
         }
 
-        addShoes()
-
-        //todo: add observer for shoes list
+        sharedViewModel.shoeList.observe(this, Observer { shoeList ->
+            addShoes()
+        })
 
         return binding.root
     }
 
     private fun addShoes() {
-        //clear the list
+        // clear the list
         binding.shoeListLinearLayout.removeAllViews()
 
         // add a new view for each shoe
-        sharedViewModel.shoeList.value?.forEach {
-            //todo: create a custom view class that returns shoe layout
-//            val shoeBinding = inflate(
-//                LayoutInflater.from(context),
-//                R.layout.shoe_list_item,
-//                binding.shoeListLinearLayout,
-//                false
-//            )
+        sharedViewModel.shoeList.value?.forEach { shoe ->
+            // inflate the shoe item layout
+            val shoeItemLayout = View.inflate(
+                context,
+                R.layout.shoe_list_item,
+                binding.shoeListLinearLayout
+            )
 
-            //shoeBinding.shoe = it
+            // populate the shoe item details
+            with(shoeItemLayout) {
+                val nameText = this.findViewById<TextView>(R.id.name_text)
+                val companyText = this.findViewById<TextView>(R.id.shoe_company_text)
+                val sizeText = this.findViewById<TextView>(R.id.shoe_size_text)
+                val descriptionText = this.findViewById<TextView>(R.id.description_text)
+
+                nameText.text = shoe.name
+                companyText.text = shoe.company
+                sizeText.text = shoe.size.toString()
+                descriptionText.text = shoe.description
+            }
+
+            // add to the layout
+            binding.shoeListLinearLayout.addView(shoeItemLayout)
         }
     }
 }
