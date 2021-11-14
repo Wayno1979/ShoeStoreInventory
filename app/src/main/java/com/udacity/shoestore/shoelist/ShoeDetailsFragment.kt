@@ -33,13 +33,13 @@ class ShoeDetailsFragment : Fragment() {
             shoe = sharedViewModel.currentShoe.value
 
             cancelButton.setOnClickListener {
-                navigateBack()
+                returnToShoeList()
             }
 
             sharedViewModel.eventShoeAdded.observe(viewLifecycleOwner, Observer{ shoeAdded ->
                 if (shoeAdded) {
                     sharedViewModel.addShoeCompleted()
-                    navigateBack()
+                    returnToShoeList()
                 }
             })
         }
@@ -47,7 +47,7 @@ class ShoeDetailsFragment : Fragment() {
         return binding.root
     }
 
-    private fun navigateBack()
+    private fun returnToShoeList()
     {
         navController.navigate(R.id.action_shoeDetailsFragment_to_shoeListFragment)
     }
