@@ -18,8 +18,9 @@
 
     <style name="labels">
         <item name="android:fontFamily">@font/roboto</item>
-        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>
